@@ -1,0 +1,55 @@
+﻿[Files]
+File0=Fragen.java
+File1=GUI.java
+File2=Steuerung.java
+
+[Box:  - Fragen]
+X=20
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=13
+FontName=Segoe UI
+
+[Box:  - GUI]
+X=91
+Y=323
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=13
+FontName=Segoe UI
+
+[Box:  - Steuerung]
+X=418
+Y=144
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=13
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=13
+ShowObjectDiagram=0
+
+[Connections]
+V0=GUI#Steuerung#AssociationBidirectional####0#0#0###0#0
+V1=Steuerung#Fragen#AssociationDirected####0#0#0###0#0
+
+[Interactive]
+I0=
+
