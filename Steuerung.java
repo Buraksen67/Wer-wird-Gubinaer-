@@ -19,11 +19,6 @@ public class Steuerung {
     dieGUI = pGUI;
   }
   // start methods
-  public void aktualisiereFrage(String pFrage) {
-    // TODO add your code here
-    
-  }
-
   public void aktualisiereAntwort(String pAntwort) {
     // TODO add your code here
     
