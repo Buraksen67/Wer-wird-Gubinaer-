@@ -1,27 +1,28 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Random;
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class GUI extends JFrame {
   
+  private Steuerung steuerung;
   // start attributes
-  private Steuerung dieST;
-  private JButton FrageA = new JButton();
-  private JButton FrageB = new JButton();
-  private JButton FrageC = new JButton();
-  private JButton FrageD = new JButton();
-  private JTextField Ffield = new JTextField();
-  private JTextField jTextFieldEnd = new JTextField();
+  private JButton frageA = new JButton();
+  private JButton frageB = new JButton();
+  private JButton frageC = new JButton();
+  private JButton frageD = new JButton();
+  private JTextField fField = new JTextField();
+  private JTextField endText = new JTextField();
   private JButton bRESTART1 = new JButton();
-  // end attributes
+
+  private JButton[] fragen = {frageA, frageB, frageC, frageD};
   
+  private JTextField winScreen = new JTextField();
+  // end attributes
   public GUI() { 
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 963; 
-    int frameHeight = 684;
+    int frameWidth = 1170; 
+    int frameHeight = 842;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -33,53 +34,53 @@ public class GUI extends JFrame {
     cp.setLayout(null);
     // start components
     
-    FrageA.setBounds(88, 440, 328, 64);
-    FrageA.setMargin(new Insets(2, 2, 2, 2));
-    FrageA.addActionListener(new ActionListener() { 
+    frageA.setBounds(88, 440, 328, 64);
+    frageA.setMargin(new Insets(2, 2, 2, 2));
+    frageA.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent evt) { 
         FrageA_ActionPerformed(evt);
       }
     });
-    cp.add(FrageA);
+    cp.add(frageA);
     
-    FrageB.setBounds(528, 440, 328, 64);
-    FrageB.setMargin(new Insets(2, 2, 2, 2));
-    FrageB.addActionListener(new ActionListener() { 
+    frageB.setBounds(528, 440, 328, 64);
+    frageB.setMargin(new Insets(2, 2, 2, 2));
+    frageB.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent evt) { 
         FrageB_ActionPerformed(evt);
       }
     });
-    cp.add(FrageB);
+    cp.add(frageB);
     
-    FrageC.setBounds(88, 528, 328, 64);
-    FrageC.setMargin(new Insets(2, 2, 2, 2));
-    FrageC.addActionListener(new ActionListener() { 
+    frageC.setBounds(88, 528, 328, 64);
+    frageC.setMargin(new Insets(2, 2, 2, 2));
+    frageC.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent evt) { 
         FrageC_ActionPerformed(evt);
       }
     });
-    cp.add(FrageC);
+    cp.add(frageC);
     
-    FrageD.setBounds(528, 528, 328, 64);
-    FrageD.setMargin(new Insets(2, 2, 2, 2));
-    FrageD.addActionListener(new ActionListener() { 
+    frageD.setBounds(528, 528, 328, 64);
+    frageD.setMargin(new Insets(2, 2, 2, 2));
+    frageD.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent evt) { 
         FrageD_ActionPerformed(evt);
       }
     });
-    cp.add(FrageD);
+    cp.add(frageD);
     
-    Ffield.setBounds(88, 336, 768, 80);
-    Ffield.setEditable(false);
-    cp.add(Ffield);
+    fField.setBounds(88, 336, 768, 80);
+    fField.setEditable(false);
+    cp.add(fField);
     
-    jTextFieldEnd.setBounds(152, 216, 656, 168);
-    jTextFieldEnd.setVisible(false);
-    jTextFieldEnd.setFont(new Font("Dialog", Font.PLAIN, 55));
-    jTextFieldEnd.setEditable(false);
-    jTextFieldEnd.setHorizontalAlignment(SwingConstants.CENTER);
-    cp.add(jTextFieldEnd);
-    bRESTART1.setBounds(336, 480, 256, 72);
+    endText.setBounds(152, 216, 656, 168);
+    endText.setVisible(false);
+    endText.setFont(new Font("Dialog", Font.PLAIN, 55));
+    endText.setEditable(false);
+    endText.setHorizontalAlignment(SwingConstants.CENTER);
+    cp.add(endText);
+    bRESTART1.setBounds(424, 512, 256, 72);
     bRESTART1.setText("RESTART");
     bRESTART1.setMargin(new Insets(2, 2, 2, 2));
     bRESTART1.addActionListener(new ActionListener() { 
@@ -89,78 +90,98 @@ public class GUI extends JFrame {
     });
     bRESTART1.setVisible(false);
     cp.add(bRESTART1);
+    winScreen.setBounds(240, 240, 656, 256);
+    winScreen.setVisible(false);    
+    winScreen.setEditable(false);
+    cp.add(winScreen);
+    frageD.setBounds(696, 696, 328, 64);
+    frageC.setBounds(88, 696, 328, 64);
+    frageA.setBounds(88, 560, 328, 64);
+    frageB.setBounds(704, 560, 328, 64);
+    fField.setBounds(176, 440, 768, 80);
+    endText.setBounds(240, 264, 656, 176);
+    frageB.setBounds(696, 560, 328, 64);
     // end components
     setVisible(true);
-    dieST = new Steuerung(this);
+    steuerung = new Steuerung(this);
     // Erste Frage anzeigen
-    dieST.aktualisiereFrage(null);
-  } 
-  
-  // start methods
-  public static void main(String[] args) {
-    new GUI();
-  } 
-  
+    steuerung.aktualisiereFrage();
+  }
+
+
+  // !!!! PLEASE CHANGE
   public void FrageA_ActionPerformed(ActionEvent evt) {
-    dieST.checkAnswer(1);
-    dieST.aktualisiereFrage(null);
+    steuerung.checkAnswer(1);
+    steuerung.aktualisiereFrage();
   } 
+  // start methods
   
   public void FrageB_ActionPerformed(ActionEvent evt) {
-    dieST.checkAnswer(2);
-    dieST.aktualisiereFrage(null);
+    steuerung.checkAnswer(2);
+    steuerung.aktualisiereFrage();
   } 
   
   public void FrageC_ActionPerformed(ActionEvent evt) {
-    dieST.checkAnswer(3);
-    dieST.aktualisiereFrage(null);
+    steuerung.checkAnswer(3);
+    steuerung.aktualisiereFrage();
   } 
   
   public void FrageD_ActionPerformed(ActionEvent evt) {
-    dieST.checkAnswer(4);
-    dieST.aktualisiereFrage(null);
+    steuerung.checkAnswer(4);
+    steuerung.aktualisiereFrage();
   }
     
   // Methode zur Aktualisierung des Frage-Textfelds
   public void updateQuestionText(String frage) {
-    Ffield.setText(frage);
+    fField.setText(frage);
   }
     
   // Methode zur Aktualisierung der Antwort-Buttons
   public void updateAnswerButtons(String[] antworten) {
-    FrageA.setText(antworten[0]);
-    FrageB.setText(antworten[1]);
-    FrageC.setText(antworten[2]);
-    FrageD.setText(antworten[3]);
+    for (int i=0; i<4; i++) {
+      fragen[i].setText(antworten[i]);
+    }
   } 
   
   public void hideEndMessage() {
-    jTextFieldEnd.setVisible(false);
+    endText.setVisible(false);
     bRESTART1.setVisible(false); 
   }
   
   public void showEndMessage() {
-    jTextFieldEnd.setText("Oh dear");
-    jTextFieldEnd.setVisible(true);
+    endText.setText("Oh dear");
+    endText.setVisible(true);
     bRESTART1.setVisible(true);
-    FrageA.setVisible(false);
-    FrageB.setVisible(false);
-    FrageC.setVisible(false);
-    FrageD.setVisible(false);
-    Ffield.setVisible(false);
+    for (JButton frage : fragen) {
+      frage.setVisible(false);
+    }
+    fField.setVisible(false);
+  }
+  
+  public void hideWinMessage() {
+    winScreen.setVisible(false);
+    bRESTART1.setVisible(false);    
+  }
+  
+  public void showWinMessage() {
+    winScreen.setText("Glückwunsch, du hast gewonnen");
+    winScreen.setVisible(true);
+    bRESTART1.setVisible(true);
+    for (JButton frage : fragen) {
+      frage.setVisible(false);
+    }
+    fField.setVisible(false);
   }
   
   public void bRESTART1_ActionPerformed(ActionEvent evt) {
     // TODO add your code here
-    jTextFieldEnd.setVisible(false);
+    endText.setVisible(false);
     bRESTART1.setVisible(false);
-    FrageA.setVisible(true);
-    FrageB.setVisible(true);
-    FrageC.setVisible(true);
-    FrageD.setVisible(true);
-    Ffield.setVisible(true);
-    dieST.restart();
+    for (JButton frage : fragen) {
+      frage.setVisible(true);
+    }
+    fField.setVisible(true);
+    steuerung.restart();
   } // end of bRESTART1_ActionPerformed
-
-  // end methods
 }
+  // end methods
