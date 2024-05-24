@@ -20,7 +20,7 @@ public class Fragen {
     "Wie viele Kontinente gibt es?",
     "Welches ist das kleinste Säugetier der Welt?",
     "Was ist das größte Organ des menschlichen Körpers?",
-    "Welcher Ozean grenzt an die Ostküste der Vereinigten Staaten?",
+    "Welcher Ozean grenzt an die Westküste der Vereinigten Staaten?",
     "Welches Land hat die meisten Einwohner?",
     "Welches Tier symbolisiert Weisheit?",
     "Welche Jahreszeit folgt auf den Herbst?",
@@ -67,7 +67,8 @@ public class Fragen {
     "Welches Tier hat den längsten Schwanz unter den Landtieren?",
     "Welches Land hat den höchsten Pro-Kopf-Verbrauch an Schokolade?",
     "Was ist das härteste natürlich vorkommende Material auf der Erde?",
-    "Wer war der erste Mensch, der den Mount Everest bestieg?"
+    "Wer war der erste Mensch, der den Mount Everest bestieg?",
+    "Was ist die Hauptstadt von Honduras?"
     };
     
     answers = new String[][]{
@@ -90,7 +91,7 @@ public class Fragen {
     {"Wasserstoff", "Sauerstoff", "Kohlenstoff", "Stickstoff"},
     {"Brasilien", "Italien", "Ägypten", "Griechenland"},
     {"20", "24", "28", "32"},
-    {"Ente", "Schlange", "Hai", "Schildkröte"},
+    {"Ente", "Schlange", "Hai", "Orca"},
     {"Berlin", "Paris", "Madrid", "Rom"},
     {"Merkur", "Venus", "Mars", "Pluto"},
     {"Russland", "Kanada", "China", "USA"},
@@ -130,10 +131,72 @@ public class Fragen {
     {"Muräne", "Giraffe", "Alligator", "Strauß"},
     {"Schweiz", "Deutschland", "Belgien", "Österreich"},
     {"Diamant", "Quarz", "Topas", "Saphir"},
-    {"Sir Edmund Hillary", "Tenzing Norgay", "Reinhold Messner", "Hillary Step"}
+    {"Sir Edmund Hillary", "Tenzing Norgay", "Reinhold Messner", "Hillary Step"},
+    {"La Ceiba", "Choloma", "Tegucigalpa", "San Diaz"}
     };
     
-    correctAnswers = new int[]{3, 2, 3, 1, 3, 4, 4, 1, 1, 4, 2, 4, 2, 1, 1, 2, 1, 3, 4, 2, 1, 1, 2, 1, 3, 1, 2, 1, 2, 1, 3, 1, 3, 1, 4, 1, 1, 2, 3, 2, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 1, 2, 3, 4, 1};                                                   
+    correctAnswers = new int[]{
+    3, // Welche Farbe hat eine reife Banane? - Gelb
+    2, // Welches Tier miaut normalerweise? - Katze
+    3, // Welches ist das höchste Gebäude der Welt? - Burj Khalifa
+    2, // Welche Planeten befinden sich zwischen Mars und Uranus? - Venus und Saturn
+    1, // Wie viele Beine hat eine Spinne normalerweise? - Sechs
+    4, // Welches ist das größte Meer der Welt? - Pazifischer Ozean
+    1, // Welche dieser Farben ist eine Primärfarbe? - Rot
+    1, // Wer schrieb 'Romeo und Julia'? - William Shakespeare
+    1, // Welches ist das schnellste Landtier? - Gepard
+    4, // Wie viele Kontinente gibt es? - Sieben
+    2, // Welches ist das kleinste Säugetier der Welt? - Maus
+    3, // Was ist das größte Organ des menschlichen Körpers? - Haut
+    1, // Welcher Ozean grenzt an die Westküste der Vereinigten Staaten? - Pazifischer Ozean
+    1, // Welches Land hat die meisten Einwohner? - China
+    1, // Welches Tier symbolisiert Weisheit? - Eule
+    3, // Welche Jahreszeit folgt auf den Herbst? - Winter
+    2, // Welches Element hat die chemische Bezeichnung 'H'? - Wasserstoff
+    1, // Welches Land ist für seine Pyramiden bekannt? - Ägypten
+    4, // Wie viele Zähne hat ein erwachsener Mensch normalerweise? - 32
+    3, // Welches Tier legt keine Eier? - Hai
+    2, // Welche Hauptstadt hat die Fläche von 891,8 km²? - Paris
+    3, // Welcher Planet ist der kleinste in unserem Sonnensystem? - Mars
+    2, // Welches Land hat die längste Landgrenze? - Russland
+    4, // Wie viele Zeitzonen gibt es auf der Welt? - 24
+    2, // Was ist die Hauptkomponente der Luft? - Sauerstoff
+    1, // Was ist die chemische Formel für Wasser? - H2O
+    2, // Welcher Fluss ist der längste der Welt? - Nil
+    1, // Was ist die Hauptstadt von Australien? - Canberra
+    3, // Welche ist die längste Schlange der Welt? - Python
+    1, // Was ist der chemische Name für Salz? - Natriumchlorid
+    3, // Was ist die höchste Bergkette der Welt? - Himalaya
+    1, // Wie heißt die berühmteste Uhr der Welt? - Big Ben
+    3, // Was ist der größte See der Welt? - Victoria-See
+    2, // Welcher Planet hat die meisten Monde? - Saturn
+    4, // Was ist die offizielle Sprache von Brasilien? - Portugiesisch
+    3, // Was ist der bekannteste Nationalpark der USA? - Grand Canyon
+    2, // Wie heißt die Wissenschaft von der Erforschung des Weltraums? - Astrophysik
+    2, // Welches Element ist das zweithäufigste im Erdmantel? - Silizium
+    2, // Wo befindet sich das Tal des Todes? - Kalifornien
+    3, // Was ist der bekannteste Buchtitel von Jules Verne? - 20.000 Meilen unter dem Meer
+    3, // Wie lautet die älteste bekannte schriftliche Sprache der Menschheit? - Sumerisch
+    1, // Welches ist das kleinste Land der Welt? - Vatikanstadt
+    4, // Wer ist der einzige Mensch, der jemals einen offiziellen Kriegseinsatz gegen die USA angeordnet hat? - Winston Churchill
+    2, // Welcher Krieg gilt als der längste Krieg der Geschichte? - Dreißigjähriger Krieg
+    4, // Was war das erste Land, das eine Demokratie hatte? - USA
+    1, // Wer war der erste Mensch im Weltall? - Juri Gagarin
+    1, // Was ist der tiefste Punkt auf der Erde? - Marianengraben
+    2, // Welches Tier hat den längsten Schwanz im Verhältnis zu seiner Körpergröße? - Giraffe
+    1, // Welcher Planet ist der nächste zum Sonnensystem der Erde? - Venus
+    1, // Wer schrieb das Buch 'Der Ursprung der Arten'? - Charles Darwin
+    1, // Was ist die chemische Formel für Tafelwasser? - H2CO3
+    2, // Welches ist das kleinste Säugetier der Welt? - Schmetterlingsfisch
+    1, // Welches Land hat die meisten UNESCO-Welterbestätten? - Italien
+    3, // Welches Tier hat den größten Herzschlag pro Minute? - Mensch
+    2, // Welches Land hat den längsten unbebauten Strand? - Australien
+    4, // Wer ist der einzige Präsident der USA, der mehr als zwei Amtszeiten gedient hat? - Franklin D. Roosevelt
+    2, // Welches Tier hat den längsten Schwanz unter den Landtieren? - Muräne
+    1, // Welches Land hat den höchsten Pro-Kopf-Verbrauch an Schokolade? - Schweiz
+    2, // Was ist das härteste natürlich vorkommende Material auf der Erde? - Quarz
+    1  // Wer war der erste Mensch, der den Mount Everest bestieg? - Sir Edmund Hillary
+    };
   } 
   
   public String[] getQuestions() {
