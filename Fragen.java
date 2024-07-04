@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class Fragen {
   
-  private String[] questions;
-  private String[][] answers;
-  private int[] correctAnswers;
+  private final String[] questions;
+  private final String[][] answers;
+  private final int[] correctAnswers;
   
   public Fragen() {
     questions = new String[]{
@@ -52,19 +52,19 @@ public class Fragen {
     "Welches ist das kleinste Land der Welt?",
     "Wer ist der einzige Mensch, der jemals einen offiziellen Kriegseinsatz gegen die USA angeordnet hat?",
     "Welcher Krieg gilt als der längste Krieg der Geschichte?",
-    "Was war das erste Land, das eine Demokratie hatte?",
+    "Welches Land besitzt als ältestes die Staatsform der Demokratie?",
     "Wer war der erste Mensch im Weltall?",
     "Was ist der tiefste Punkt auf der Erde?",
     "Welches Tier hat den längsten Schwanz im Verhältnis zu seiner Körpergröße?",
     "Welcher Planet ist der nächste zum Sonnensystem der Erde?",
-    "Wer schrieb das Buch 'Der Ursprung der Arten'?",
+    "Wer wurde Torschützenkönig der Bundesliga in der Saison 2014/2015?",
     "Was ist die chemische Formel für Tafelwasser?",
     "Welches ist das kleinste Säugetier der Welt?",
     "Welches Land hat die meisten UNESCO-Welterbestätten?",
     "Welches Tier hat den größten Herzschlag pro Minute?",
     "Welches Land hat den längsten unbebauten Strand?",
     "Wer ist der einzige Präsident der USA, der mehr als zwei Amtszeiten gedient hat?",
-    "Welches Tier hat den längsten Schwanz unter den Landtieren?",
+    " Welches Tier hat die größten Augen im Verhältnis zu seiner Körpergröße?",
     "Welches Land hat den höchsten Pro-Kopf-Verbrauch an Schokolade?",
     "Was ist das härteste natürlich vorkommende Material auf der Erde?",
     "Wer war der erste Mensch, der den Mount Everest bestieg?",
@@ -94,43 +94,43 @@ public class Fragen {
     {"Ente", "Schlange", "Hai", "Orca"},
     {"Berlin", "Paris", "Madrid", "Rom"},
     {"Merkur", "Venus", "Mars", "Pluto"},
-    {"Russland", "Kanada", "China", "USA"},
-    {"24", "12", "36", "48"},
+    {"Russland", "Kanada", "China", "Indien"},
+    {"12", "24", "36", "48"},
     {"Stickstoff", "Kohlenstoff", "Sauerstoff", "Wasserstoff"},
     {"H2O", "CO2", "O2", "NaCl"},
     {"Amazonas", "Nil", "Jangtse", "Mississippi"},
-    {"Canberra", "Sydney", "Melbourne", "Perth"},
+    {"Perth", "Sydney", "Melbourne", "Canberra"},
     {"Anakonda", "Königskobra", "Python", "Schwarze Mamba"},
-    {"Natriumchlorid", "Kaliumchlorid", "Eisen(III)-chlorid", "Calciumchlorid"},
+    {"Eisen(III)chlorid", "Kaliumchlorid", "Natriumchlorid", "Calciumchlorid"},
     {"Anden", "Rockies", "Himalaya", "Alpen"},
     {"Big Ben", "Sonnenuhr", "Rolex", "Uhr des Königs"},
-    {"Kaspisches Meer", "Lake Superior", "Lake Baikal", "Victoria-See"},
-    {"Jupiter", "Saturn", "Uranus", "Neptun"},
-    {"Portugiesisch", "Spanisch", "Französisch", "Englisch"},
-    {"Yellowstone", "Yosemite", "Grand Canyon", "Everglades"},
+    {"Genfer See", "Lake Superior", "Kaspisches Meer", "Victoria-See"},
+    {"Saturn", "Uranus", "Jupiter", "Neptun"},
+    {"Spanisch", "Portugiesisch", "Französisch", "Englisch"},
+    {"Yellowstone", "Yosemite Nationalpark", "Grand Canyon", "Wrangell-St.-Elias-Nationalpark"},
     {"Astronomie", "Astrophysik", "Kosmologie", "Astrologie"},
-    {"Sauerstoff", "Silizium", "Aluminium", "Eisen"},
+    {"Kobalt", "Eisen", "Aluminium", "Silizium"},
     {"Arizona", "Kalifornien", "Utah", "Nevada"},
     {"Reise um die Erde", "Reise zum Mittelpunkt der Erde", "20.000 Meilen unter dem Meer", "Die geheimnisvolle Insel"},
-    {"Kanaanäisch", "Akkadisch", "Sumerisch", "Hebräisch"},
+    {"Sumerisch", "Akkadisch", "Gubbiisch", "Hebräisch"},
     {"Vatikanstadt", "Monaco", "Nauru", "Tuvalu"},
     {"Hirohito", "Napoleon Bonaparte", "Kaiser Wilhelm II", "Winston Churchill"},
-    {"Hundertjähriger Krieg", "Dreißigjähriger Krieg", "Achsenmächte gegen Alliierte", "Peloponnesischer Krieg"},
+    {"Sudanischer Bürgerkrieg", "Der Hundertjährige Krieg", "Achsenmächte gegen Alliierte", "Peloponnesischer Krieg"},
     {"Athen", "Rom", "USA", "Frankreich"},
-    {"Juri Gagarin", "Neil Armstrong", "Buzz Aldrin", "Yuri Malenchenko"},
-    {"Marianengraben", "Tiefseegraben von Puerto Rico", "Java-Tiefsee", "Philippinengraben"},
-    {"Stummelschwanzkatzen", "Schmetterlingsfisch", "Murmeltier", "Axolotl"},
+    {"Lewis Wattkins", "Neil Armstrong", "Juri Gagarin", "Yuri Malenchenko"},
+    {"Tiefsee von Puerto Rico", "Marianengraben", "Java-Tiefsee", "Philippinengraben"},
+    {"Stummelschwanzkatzen", "Schmetterlingsfisch", "südamerikanische Gürteltier", "Axolotl"},
     {"Venus", "Mars", "Merkur", "Jupiter"},
-    {"Charles Darwin", "Albert Einstein", "Isaac Newton", "Galileo Galilei"},
-    {"H2CO3", "H2O", "HCl", "NaCl"},
-    {"Etrusconyx", "Tadarida brasiliensis", "Suncus etruscus", "Crocidura suaveolens"},
-    {"Italien", "China", "Spanien", "Deutschland"},
-    {"Kolibri", "Eisbär", "Mensch", "Elefant"},
-    {"Brasilien", "Australien", "Kanada", "Südafrika"},
-    {"Franklin D. Roosevelt", "George Washington", "Abraham Lincoln", "Thomas Jefferson"},
-    {"Muräne", "Giraffe", "Alligator", "Strauß"},
-    {"Schweiz", "Deutschland", "Belgien", "Österreich"},
-    {"Diamant", "Quarz", "Topas", "Saphir"},
+    {"Robert Lewandowski", "Alexander Meier", "Aubameyang", "Robben"},
+    {"Gold", "Platin", "Iridium", "Quecksilber"},
+    {"Rod Laver", "Roger Federer", "Roy Emerson", "Rafael Nadal"},
+    {"Deutschland", "China", "Mexiko", "Italien"},
+    {"Kolibri", "Gepard", "Blaue Hering", "Spitzmaus"},
+    {"Bangladesch", "Australien", "Kanada", "Brasilien"},
+    {"George Washington", "Franklin D. Roosevelt", "Abraham Lincoln", "Thomas Jefferson"},
+    {"Muräne", "Riesensepien", "Riesenkalmar", "Koloss-Kalmar"},
+    {"Liechtenstein", "Deutschland", "Belgien", "Schweiz"},
+    {"Grundgestein", "Diamant", "Topas", "Saphir"},
     {"Sir Edmund Hillary", "Tenzing Norgay", "Reinhold Messner", "Hillary Step"},
     {"La Ceiba", "Choloma", "Tegucigalpa", "San Diaz"}
     };
@@ -142,72 +142,78 @@ public class Fragen {
     2, // Welche Planeten befinden sich zwischen Mars und Uranus? - Venus und Saturn
     1, // Wie viele Beine hat eine Spinne normalerweise? - Sechs
     4, // Welches ist das größte Meer der Welt? - Pazifischer Ozean
-    1, // Welche dieser Farben ist eine Primärfarbe? - Rot
+    4, // Welche dieser Farben ist eine Primärfarbe? - Blau
     1, // Wer schrieb 'Romeo und Julia'? - William Shakespeare
     1, // Welches ist das schnellste Landtier? - Gepard
     4, // Wie viele Kontinente gibt es? - Sieben
     2, // Welches ist das kleinste Säugetier der Welt? - Maus
-    3, // Was ist das größte Organ des menschlichen Körpers? - Haut
+    4, // Was ist das größte Organ des menschlichen Körpers? - Haut
     1, // Welcher Ozean grenzt an die Westküste der Vereinigten Staaten? - Pazifischer Ozean
     1, // Welches Land hat die meisten Einwohner? - China
     1, // Welches Tier symbolisiert Weisheit? - Eule
-    3, // Welche Jahreszeit folgt auf den Herbst? - Winter
-    2, // Welches Element hat die chemische Bezeichnung 'H'? - Wasserstoff
-    1, // Welches Land ist für seine Pyramiden bekannt? - Ägypten
+    2, // Welche Jahreszeit folgt auf den Herbst? - Winter
+    1, // Welches Element hat die chemische Bezeichnung 'H'? - Wasserstoff
+    3, // Welches Land ist für seine Pyramiden bekannt? - Ägypten
     4, // Wie viele Zähne hat ein erwachsener Mensch normalerweise? - 32
-    3, // Welches Tier legt keine Eier? - Hai
-    2, // Welche Hauptstadt hat die Fläche von 891,8 km²? - Paris
-    3, // Welcher Planet ist der kleinste in unserem Sonnensystem? - Mars
-    2, // Welches Land hat die längste Landgrenze? - Russland
-    4, // Wie viele Zeitzonen gibt es auf der Welt? - 24
-    2, // Was ist die Hauptkomponente der Luft? - Sauerstoff
+    4, // Welches Tier legt keine Eier? - Orca
+    1, // Welche Hauptstadt hat die Fläche von 891,8 km²? - Berlin
+    1, // Welcher Planet ist der kleinste in unserem Sonnensystem? - Merkur
+    2, // Welches Land hat die längste Landgrenze? - Kanada
+    2, // Wie viele Zeitzonen gibt es auf der Welt? - 24
+    4, // Was ist die Hauptkomponente der Luft? - Stickstoff
     1, // Was ist die chemische Formel für Wasser? - H2O
     2, // Welcher Fluss ist der längste der Welt? - Nil
-    1, // Was ist die Hauptstadt von Australien? - Canberra
-    3, // Welche ist die längste Schlange der Welt? - Python
+    4, // Was ist die Hauptstadt von Australien? - Canberra
+    1, // Welche ist die längste Schlange der Welt? - Anakonda
     1, // Was ist der chemische Name für Salz? - Natriumchlorid
     3, // Was ist die höchste Bergkette der Welt? - Himalaya
     1, // Wie heißt die berühmteste Uhr der Welt? - Big Ben
-    3, // Was ist der größte See der Welt? - Victoria-See
-    2, // Welcher Planet hat die meisten Monde? - Saturn
-    4, // Was ist die offizielle Sprache von Brasilien? - Portugiesisch
-    3, // Was ist der bekannteste Nationalpark der USA? - Grand Canyon
+    1, // Was ist der größte See der Welt? - Kaspisches Meer
+    3, // Welcher Planet hat die meisten Monde? - Jupiter
+    2, // Was ist die offizielle Sprache von Brasilien? - Portugiesisch
+    4, // Was ist der größte Nationalpark der USA? - Wrangell-St.-Elias-Nationalpark
     2, // Wie heißt die Wissenschaft von der Erforschung des Weltraums? - Astrophysik
-    2, // Welches Element ist das zweithäufigste im Erdmantel? - Silizium
+    4, // Welches Element ist das zweithäufigste im Erdmantel? - Silizium
     2, // Wo befindet sich das Tal des Todes? - Kalifornien
     3, // Was ist der bekannteste Buchtitel von Jules Verne? - 20.000 Meilen unter dem Meer
-    3, // Wie lautet die älteste bekannte schriftliche Sprache der Menschheit? - Sumerisch
+    1, // Wie lautet die älteste bekannte schriftliche Sprache der Menschheit? - Sumerisch
     1, // Welches ist das kleinste Land der Welt? - Vatikanstadt
-    4, // Wer ist der einzige Mensch, der jemals einen offiziellen Kriegseinsatz gegen die USA angeordnet hat? - Winston Churchill
-    2, // Welcher Krieg gilt als der längste Krieg der Geschichte? - Dreißigjähriger Krieg
-    4, // Was war das erste Land, das eine Demokratie hatte? - USA
-    1, // Wer war der erste Mensch im Weltall? - Juri Gagarin
-    1, // Was ist der tiefste Punkt auf der Erde? - Marianengraben
-    2, // Welches Tier hat den längsten Schwanz im Verhältnis zu seiner Körpergröße? - Giraffe
+    1, // Wer ist der einzige Mensch, der jemals einen offiziellen Kriegseinsatz gegen die USA angeordnet hat? - Hirohito
+    3, // Welcher Krieg gilt als der längste Krieg der Geschichte? - Der Hundertjährige Krieg
+    1, // Welches Land besitzt als ältestes die Staatsform der Demokratie? - USA
+    4, // Wer war der erste Mensch im Weltall? - Juri Gagarin
+    2, // Was ist der tiefste Punkt auf der Erde? - Marianengraben
+    3, // Welches Tier hat den längsten Schwanz im Verhältnis zu seiner Körpergröße? - südamerikanische Gürteltier
     1, // Welcher Planet ist der nächste zum Sonnensystem der Erde? - Venus
-    1, // Wer schrieb das Buch 'Der Ursprung der Arten'? - Charles Darwin
-    1, // Was ist die chemische Formel für Tafelwasser? - H2CO3
-    2, // Welches ist das kleinste Säugetier der Welt? - Schmetterlingsfisch
-    1, // Welches Land hat die meisten UNESCO-Welterbestätten? - Italien
-    3, // Welches Tier hat den größten Herzschlag pro Minute? - Mensch
-    2, // Welches Land hat den längsten unbebauten Strand? - Australien
-    4, // Wer ist der einzige Präsident der USA, der mehr als zwei Amtszeiten gedient hat? - Franklin D. Roosevelt
-    2, // Welches Tier hat den längsten Schwanz unter den Landtieren? - Muräne
-    1, // Welches Land hat den höchsten Pro-Kopf-Verbrauch an Schokolade? - Schweiz
-    2, // Was ist das härteste natürlich vorkommende Material auf der Erde? - Quarz
-    1  // Wer war der erste Mensch, der den Mount Everest bestieg? - Sir Edmund Hillary
+    2, // Wer wurde Torschützenkönig der Bundesliga in der Saison 2014/2015? - Alexander Meier
+    2, // Welches der folgenden Elemente ist das seltenste in der Erdkruste? - Platin
+    3, // Welcher Tennisspieler hat als erster sowohl in seiner Einzel- als auch in seiner Doppelkarriere alle vier Grand-Slam-Turniere gewonnen? - Roy Emerson
+    4, // Welches Land hat die meisten UNESCO-Welterbestätten? - Italien
+    1, // Welches Tier hat den größten Herzschlag pro Minute? - Kolibri
+    1, // Welches Land hat den längsten unbebauten Strand? - Bangladesch
+    2, // Wer ist der einzige Präsident der USA, der mehr als zwei Amtszeiten gedient hat? - Franklin D. Roosevelt
+    3, // Welches Tier hat die größten Augen im Verhältnis zu seiner Körpergröße? - Riesenkalmar
+    4, // Welches Land hat den höchsten Pro-Kopf-Verbrauch an Schokolade? - Schweiz
+    2, // Was ist das härteste natürlich vorkommende Material auf der Erde? - Diamant
+    1, // Wer war der erste Mensch, der den Mount Everest bestieg? - Sir Edmund Hillary
+    3, // Was ist die Hauptstadt von Honduras? - Tegucigalpa
     };
   } 
   
   public String[] getQuestions() {
-    return questions;
+    return Arrays.copyOf(questions, questions.length);
   }
   
   public String[][] getAnswers() {
-    return answers;
+    String[][] copy = new String[answers.length][];
+    for (int i = 0; i < answers.length; i++) {
+      copy[i] = Arrays.copyOf(answers[i], answers[i].length);
+    }
+    return copy;
   }
   
   public int[] getCorrectAnswers() {
-    return correctAnswers;
+    return Arrays.copyOf(correctAnswers, correctAnswers.length);
   }                          
+          
 }
