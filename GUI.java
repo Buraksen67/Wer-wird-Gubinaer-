@@ -247,6 +247,8 @@ public class GUI extends JFrame {
       frage.setVisible(true);
     }
     fField.setVisible(true);
+    bTelefon.setVisible(true);
+    bPublikum.setVisible(true);
     steuerung.restart();
     fiftyFiftyUsed = false;
   }
