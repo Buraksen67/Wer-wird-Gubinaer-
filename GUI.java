@@ -160,6 +160,7 @@ public class GUI extends JFrame {
     
     tfTelefon.setBounds(376, 368, 408, 80);
     cp.add(tfTelefon);
+    tfTelefon.setVisible(false);
     // end components
     setVisible(true);
     
@@ -214,6 +215,9 @@ public class GUI extends JFrame {
     }
     fField.setVisible(false);
     preisList.setVisible(false);
+    bFiftyFifty.setVisible(false);
+    bTelefon.setVisible(false);
+    bPublikum.setVisible(false);
   }
 
   public void hideWinMessage() {
@@ -231,6 +235,9 @@ public class GUI extends JFrame {
     }
     fField.setVisible(false);
     preisList.setVisible(false);
+    bFiftyFifty.setVisible(false);
+    bTelefon.setVisible(false);
+    bPublikum.setVisible(false);
   }
 
   public void bRESTART1_ActionPerformed(ActionEvent evt) {
