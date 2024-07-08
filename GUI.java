@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Collections;
+import java.util.Random;
 import javax.swing.*;
+import javax.swing.event.*;
 
 public class GUI extends JFrame {
   // start attributes
@@ -20,7 +23,7 @@ public class GUI extends JFrame {
   private JButton bFiftyFifty = new JButton("50/50");
   private JButton bTelefon = new JButton("T");
   private JButton bPublikum = new JButton("P");
-  private boolean fiftyFiftyUsed = false; // Flag, um zu prüfen, ob der 50/50 Joker verwendet wurde
+  private boolean fiftyFiftyUsed = false; 
   private boolean telephoneJokerUsed = false;
   private JTextField tfTelefon = new JTextField();
   // end attributes
@@ -156,9 +159,12 @@ public class GUI extends JFrame {
         bPublikum_ActionPerformed(evt);
       }
     });
+    bPublikum.setVisible(false);
     cp.add(bPublikum);
     
     tfTelefon.setBounds(376, 368, 408, 80);
+    tfTelefon.setFont(new Font("Dialog", Font.PLAIN, 20));
+    tfTelefon.setEditable(false);
     cp.add(tfTelefon);
     tfTelefon.setVisible(false);
     // end components
@@ -172,21 +178,25 @@ public class GUI extends JFrame {
   public void frageA_ActionPerformed(ActionEvent evt) {
     steuerung.checkAnswer(1);
     steuerung.aktualisiereFrage();
+    tfTelefon.setVisible(false);
   }
 
   public void frageB_ActionPerformed(ActionEvent evt) {
     steuerung.checkAnswer(2);
     steuerung.aktualisiereFrage();
+    tfTelefon.setVisible(false);
   }
 
   public void frageC_ActionPerformed(ActionEvent evt) {
     steuerung.checkAnswer(3);
     steuerung.aktualisiereFrage();
+    tfTelefon.setVisible(false);
   }
 
   public void frageD_ActionPerformed(ActionEvent evt) {
     steuerung.checkAnswer(4);
     steuerung.aktualisiereFrage();
+    tfTelefon.setVisible(false);
   }
 
   public void updateQuestionText(String frage) {
@@ -251,27 +261,14 @@ public class GUI extends JFrame {
     bPublikum.setVisible(true);
     steuerung.restart();
     fiftyFiftyUsed = false;
+    tfTelefon.setVisible(false);
   }
 
-  public void updatePrizeList(int questionIndex) {
-    String[] prizeList = { "50€", "100€", "200€", "300€", "500€", "1.000€", "2.000€", "4.000€", "8.000€", "16.000€",
-    "32.000€", "64.000€", "125.000€", "500.000€", "1.000.000€" };
-    
-    if (questionIndex >= 0 && questionIndex < prizeList.length) {
-      StringBuilder markedPrizeList = new StringBuilder("<html><div style='text-align: center; background-color: #89CFF0; padding: 5px;'>");
-      for (int i = prizeList.length - 1; i >= 0; i--) {
-        if (i == questionIndex) {
-          markedPrizeList.append("<font color='#FF6347'>").append(prizeList[i]).append("</font><br>");
-        } else {
-          markedPrizeList.append(prizeList[i]).append("<br>");
-        }
-      }
-      markedPrizeList.append("</div></html>");
-      preisList.setOpaque(true);
-      preisList.setBackground(new Color(137, 207, 240));
-      preisList.setHorizontalAlignment(SwingConstants.CENTER);
-      preisList.setText(markedPrizeList.toString());
-    }
+  public void updatePrizeList(String markedPrizeList) {
+    preisList.setOpaque(true);
+    preisList.setBackground(new Color(137, 207, 240));
+    preisList.setHorizontalAlignment(SwingConstants.CENTER);
+    preisList.setText(markedPrizeList);
   }
 
   public void updateHighscore(String highscore) {
@@ -290,11 +287,23 @@ public class GUI extends JFrame {
   }
 
   public void bTelefon_ActionPerformed(ActionEvent evt) {
-    
+    if (!telephoneJokerUsed) {
+      steuerung.useTelefon();
+      telephoneJokerUsed = true;
+      tfTelefon.setVisible(true);
+    } 
+  }
+  
+  public void updatetelefonJokerMessage(String message) {
+    tfTelefon.setText(message);
+  }
+  
+  public void setTelefonVisible(boolean visible) {
+    bTelefon.setVisible(visible);
   }
 
   public void bPublikum_ActionPerformed(ActionEvent evt) {
-    // Hier können Sie die Logik für den Publikums-Joker hinzufügen, wenn gewünscht
+    
   }
   
   public void setAnswerButtonEnabled(int index, boolean enabled) {

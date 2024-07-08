@@ -1,10 +1,11 @@
 import java.util.Arrays;
 
 public class Fragen {
-  
+  // start attributes
   private final String[] questions;
   private final String[][] answers;
   private final int[] correctAnswers;
+  // end attributes
   
   public Fragen() {
     questions = new String[]{
@@ -200,6 +201,7 @@ public class Fragen {
     };
   } 
   
+  // start methods
   public String[] getQuestions() {
     return Arrays.copyOf(questions, questions.length);
   }
@@ -214,6 +216,6 @@ public class Fragen {
   
   public int[] getCorrectAnswers() {
     return Arrays.copyOf(correctAnswers, correctAnswers.length);
-  }                          
-          
+  }                                 
+  // end methods
 }
