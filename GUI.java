@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Random;
 import javax.swing.*;
 import javax.swing.event.*;
+import javax.swing.JLabel;
 
 public class GUI extends JFrame {
   // Start attributes
@@ -26,6 +27,8 @@ public class GUI extends JFrame {
   private boolean fiftyFiftyUsed = false; 
   private boolean telephoneJokerUsed = false;
   private JTextField tfTelefon = new JTextField();
+  private JButton startButton = new JButton("Start");
+  private JLabel jTitel = new JLabel ("Wer Wird Gubinär?");
   // End attributes
   
   public GUI() {
@@ -215,6 +218,27 @@ public class GUI extends JFrame {
     // end components
     setVisible(true);
     
+    startButton.setBounds(448, 470, 256, 72);
+    startButton.setFont(new Font("Dialog", Font.BOLD, 24));
+    startButton.setBackground(new Color(0, 139, 0));
+    startButton.setForeground(Color.WHITE);
+    startButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent evt) {
+        startButton_ActionPerformed(evt);
+      }
+    });
+    backgroundPanel.add(startButton);
+    
+    jTitel.setFont(new Font("Dialog", Font.BOLD, 55)); 
+    jTitel.setForeground(new Color(138, 43, 226)); // Lila Farbe
+    jTitel.setHorizontalAlignment(SwingConstants.CENTER);
+    jTitel.setOpaque(true);
+    jTitel.setBackground(new Color(0, 0, 0, 150)); // Transparent black background for shadow effect
+    jTitel.setBorder(BorderFactory.createLineBorder(new Color(138, 43, 226), 2)); // Border
+    jTitel.setBounds(100, 150, 970, 100); 
+    backgroundPanel.add(jTitel);
+    
+    setComponentsVisible(false);
     steuerung = new Steuerung(this);
     steuerung.aktualisiereFrage(); // Erste Frage anzeigen
   }
@@ -353,6 +377,25 @@ public class GUI extends JFrame {
   
   public void setAnswerButtonEnabled(int index, boolean enabled) {
     fragen[index].setEnabled(enabled);
+  }
+  
+  private void setComponentsVisible(boolean visible) {
+    for (JButton frage : fragen) {
+      frage.setVisible(visible);
+    }
+    fField.setVisible(visible);
+    bFiftyFifty.setVisible(visible);
+    bTelefon.setVisible(visible);
+    bPublikum.setVisible(visible);
+    preisList.setVisible(visible);
+    nfHighscore.setVisible(visible);
+    lHighscore1.setVisible(visible);
+  }
+  
+  private void startButton_ActionPerformed(ActionEvent evt) {
+    startButton.setVisible(false); // Start-Button ausblenden
+    setComponentsVisible(true);    // Andere Komponenten anzeigen
+    jTitel.setVisible(false); // Versteckt den Schriftzug
   }
   // end methods
 }
