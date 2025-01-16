@@ -44,7 +44,7 @@ public class Fragen {
     "Was ist der größte See der Welt?",
     "Welcher Planet hat die meisten Monde?",
     "Was ist die offizielle Sprache von Brasilien?",
-    "Was ist der bekannteste Nationalpark der USA?",
+    "Was ist der größte Nationalpark der USA?",
     "Wie heißt die Wissenschaft von der Erforschung des Weltraums?",
     "Welches Element ist das zweithäufigste im Erdmantel?",
     "Wo befindet sich das Tal des Todes?",
@@ -150,7 +150,7 @@ public class Fragen {
     2, // Welches ist das kleinste Säugetier der Welt? - Maus
     4, // Was ist das größte Organ des menschlichen Körpers? - Haut
     1, // Welcher Ozean grenzt an die Westküste der Vereinigten Staaten? - Pazifischer Ozean
-    1, // Welches Land hat die meisten Einwohner? - China
+    2, // Welches Land hat die meisten Einwohner? - Indien
     1, // Welches Tier symbolisiert Weisheit? - Eule
     2, // Welche Jahreszeit folgt auf den Herbst? - Winter
     1, // Welches Element hat die chemische Bezeichnung 'H'? - Wasserstoff
