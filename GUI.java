@@ -285,7 +285,7 @@ public class GUI extends JFrame {
   }
 
   public void showEndMessage() {
-    endText.setText("Oh dear");
+    endText.setText("Game Over");
     endText.setVisible(true);
     bRESTART1.setVisible(true);
     for (JButton frage : fragen) {
